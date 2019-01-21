@@ -1,0 +1,492 @@
+@import "./nav-footer.scss";
+.music-box {
+    margin: auto;
+    .music-num {
+        margin: auto;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+header{
+    .nav-menu-ul {
+        li {
+            &:nth-child(3){
+                border: 1px solid $white !important;
+            }
+        }
+    }
+}
+/**banner开始**/
+.banner {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background: url('../images/home/bk3.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: scale 2s forwards;
+    margin-bottom: 30px;
+    font-size: 60px;
+    color:$white;
+    @include flex();
+    justify-content: center;
+    text-align: center;
+    //z-index: 99;
+}
+@keyframes scale{
+    0% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/**banner结束**/
+.page-btn-box {
+    margin:auto;
+    @include flex();
+    justify-content: center;
+    .page-btn{
+        @include flex();
+        justify-content: center;
+        margin:20px auto;
+        button {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin:10px;
+            background: rgba(0, 0, 0, 0.6);
+            .glyphicon {
+                font-size: 18px;
+                transition: 0.3s linear;
+            }
+            &:hover {
+                background: $blue;
+                .glyphicon-arrow-right {
+                    margin-left: 20px;
+                }
+                .glyphicon-arrow-left{
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "微软雅黑";
+    
+}
+body {
+    background: white;
+}
+.main {
+    position: relative;
+    margin-top: 20px;
+    margin:auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 300px;
+}
+.music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 1;
+    transition: 0.3s linear;
+    &:hover:after{
+        filter: brightness(70%);
+    }
+}
+.music:after{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    border-radius: 10px;
+    background: inherit;
+    filter: blur(4px);
+    z-index: 2;
+    &:hover {
+        display: none;
+    }
+}
+.name{
+    position: absolute;
+    margin:auto;
+    z-index: 99;
+    color:white;
+}
+.name>p:nth-child(1){
+    font-size: 20px;
+    font-weight: bolder;
+}
+.bottom {
+    width: 100%;
+    height: 50px;
+    background: white;
+}
+.play {
+    position: absolute;
+    margin:auto;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    background: url("../images/music/暂停1.png");
+    background-size: 100%;
+    z-index: 999;
+}
+.pause {
+    position: absolute;
+    margin:auto;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    background: url("../images/music/播放1.png");
+    background-size: 100%;
+    z-index: 999;
+}
+.rotate {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 45%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 999;
+    border: 5px solid white;
+}
+.retatePlay {
+    animation: rotate 3s infinite linear;
+    animation-play-state:running
+}
+.retatePause{
+    animation: rotate 3s infinite linear;
+    animation-play-state:paused
+}
+.duration {
+    color:white;
+}
+.move {
+    position: absolute;
+    margin:auto;
+    left:0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width:90%;
+    background-size: 100%;
+    animation: play .5s ease-in-out; 
+}
+
+@keyframes play {
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 600px;
+    }
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#mask {
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 9999;
+    display: none;
+    
+}
+.newMusic {
+    position: absolute;
+    margin:auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: play .4s ease-in-out; 
+}
+.disappear {
+    animation: dis .5s ease-in-out
+}
+@keyframes dis {
+    0%{
+        height: 600px;
+    }
+    100%{
+        height: 0%;
+    }
+}
+.image {
+    width: 100%;
+    height: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image:after{
+    content: "";
+    width:100%;
+    height:70%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(4px) brightness(90%);
+    z-index: 2;
+    
+}
+.newName{
+    position: absolute;
+    bottom: 30px;
+    margin:auto;
+    left: 0;
+    right: 0;
+    color: black;
+    z-index: 999;
+}
+.newName>p:nth-child(1){
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 3px;
+}
+@media screen and (max-width:1024px){
+    .wrapper{
+        height: 200px;
+    }
+    .name>p:nth-child(1){
+        font-size: 25px;
+        font-weight: bolder;
+    }
+    .play,.pause{
+        width: 60px;
+        height: 60px;
+        bottom: 100px;
+    }
+    .rotate {
+        bottom: 45%;
+        width: 300px;
+        height: 300px;
+    }
+   
+}
+@media screen and (max-width:768px){
+    .rotate {
+        bottom: 45%;
+        width: 200px;
+        height: 200px;
+    }
+}
+@media screen and (max-width:767px) {
+    .wrapper{
+        height: 100px;
+        margin:6px 0;
+    }
+    .name>p:nth-child(1){
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    .play,.pause{
+        width: 45px;
+        height: 45px;
+        bottom: 60px;
+    }
+    .newMusic {
+        height: 430px;
+    }
+    @keyframes play {
+        0%{
+            height: 0%;
+        }
+        100%{
+            height: 430px;
+        }
+    }
+    @keyframes dis {
+        0%{
+            height: 430px;
+        }
+        100%{
+            height: 0%;
+        }
+    }
+    .newName{
+        bottom: 20px;
+    }
+    .newName>p:nth-child(1){
+        font-size: 11px;
+        font-weight: bolder;
+        margin-bottom: 2px;
+    }
+    .newName>p:nth-child(2){
+        font-size: 8px;
+        
+    }
+    .rotate {
+        bottom: 45%;
+        width: 150px;
+        height: 150px;
+    }
+    #top {
+        width: 50px;
+        height: 50px;
+        bottom: 3%;
+    }
+    #top>img {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width:375px) {
+    .newMusic {
+        height: 400px;
+    }
+    @keyframes play {
+        0%{
+            height: 0%;
+        }
+        100%{
+            height: 400px;
+        }
+    }
+    @keyframes dis {
+        0%{
+            height: 400px;
+        }
+        100%{
+            height: 0%;
+        }
+    }
+    .play,.pause{
+        bottom: 55px;
+    }
+    .newName{
+        bottom: 15px;
+    }
+    .rotate {
+        bottom: 43%;
+        width: 130px;
+        height: 130px;
+        border: 3px solid white;
+    }
+    #top {
+        width: 50px;
+        height: 50px;
+        bottom: 3%;
+    }
+    #top>img {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width:320px) {
+    .wrapper{
+        height: 80px;
+        margin:6px 0;
+    }
+    .newMusic {
+        height: 350px;
+    }
+    .name>p:nth-child(1){
+        font-size: 12px;
+        font-weight: bolder;
+    }
+    .name>p:nth-child(2){
+        font-size: 10px;
+        
+    }
+    .play,.pause{
+        width: 40px;
+        height: 40px;
+        bottom: 52px;
+    }
+    .newName{
+        bottom: 15px;
+    }
+    .newName>p:nth-child(1){
+        font-size: 10px;
+        font-weight: bolder;
+        margin-bottom: 1px;
+    }
+    .newName>p:nth-child(2){
+        font-size: 8px;
+        
+    }
+    @keyframes play {
+        0%{
+            height: 0%;
+        }
+        100%{
+            height: 350px;
+        }
+    }
+    @keyframes dis {
+        0%{
+            height: 350px;
+        }
+        100%{
+            height: 0%;
+        }
+    }
+    
+    
+}
+.collection {
+    position: absolute;
+    right:20px;
+    top:30px;
+    .glyphicon-heart {
+        transition: 0.3s linear;
+        font-size: 40px;
+        color:rgba(0,0,0,0.8);
+        &:hover {
+            font-size: 45px;
+        }
+    }
+    z-index: 9999;
+}

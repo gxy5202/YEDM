@@ -1,0 +1,25 @@
+$fontSize:16px;
+$blue:rgb(0,136,255);
+$white:rgb(255,255,255);
+$black:rgb(0,0,0);
+
+//初始化
+*{
+    margin:0;
+    padding:0;
+}
+//页面默认字体大小
+html {
+    font-size: $fontSize;
+    height: 100%;
+}
+li{
+    list-style-type: none;
+}
+.container,.container-full,.container-fliud{
+    margin:0;
+    padding:0;
+    //overflow: hidden;
+    box-sizing: border-box;
+}
+

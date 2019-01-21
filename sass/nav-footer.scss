@@ -1,0 +1,330 @@
+@import "./_common.scss";
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin boxSize {
+    box-sizing: border-box;
+    //overflow: hidden;
+}
+body {
+    height: 100%;
+}
+.wrapper {
+    height: 100%;
+}
+//100%导航
+.wid_full {
+    width:100%;
+}
+//菜单旋转
+.rotate-one {
+    transform: rotate(45deg) translateY(0.8rem);
+    transform-origin:50% 50%;
+}
+.rotate-two {
+    transform: rotate(-45deg) translateY(-0.9rem);
+    transform-origin:50% 50%;
+}
+//菜单定位
+.flex-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//菜单颜色
+.menu-color {
+    background-color: $white;
+}
+//logo位置
+.logo-position {
+    margin: auto;
+}
+
+//搜索框颜色
+#search-color {
+    border:1px #0CC solid;
+	box-shadow:0 0 1rem #0CC; 
+}
+#search-show {
+    width:80%;
+    height:4rem; 
+    background: rgba(255,255,255,0.5);
+    border-radius:35px;
+}
+#search-icon {
+    font-size:1.5rem;
+    color:rgb(0,136,255);
+}
+.search-button {
+    margin-right:20px;
+}
+#search-icon-font {
+    font-size:1.2rem;
+}
+
+/**头部导航和底部开始**/
+header {
+    @include flex;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    //box-shadow:0px 0px 11px #333333;
+    nav {
+        @include flex();
+        @include boxSize();
+        justify-content: space-between;
+        height: 8rem;
+        margin: auto;
+        .logo {
+            @media screen and (max-width:1200px){
+                display: none;
+            }
+        }
+        .nav-menu {
+            margin-right: 3.5rem;
+            .nav-menu-ul {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                //overflow: hidden;
+                box-sizing: border-box;
+                //@include flex;
+                li {
+                    @include flex;
+                    padding:0 2rem;
+                    display: inline-block;
+                    margin: 0 1rem;
+                    height: 3rem;
+                    line-height: 3rem;
+                    border: 1px solid rgba(255,255,255,0);
+                    border-radius: 1.5rem;
+                    transition: 0.5s linear;
+                    &:hover {
+                        border: 1px solid $white;
+                    }
+                    a {
+                        color:$white;
+                        text-decoration: none;
+                        &:hover {
+                            color:$white;
+                        }
+                    }
+                }
+        }
+        @media screen and (max-width:1200px){
+            display:none;
+            }
+        }
+        .nav-menu-bar {
+            display: none;
+            background: none;
+            border: none;
+            outline: none;
+            z-index: 999;
+            div {
+                width: 4rem;
+                height: 0.3rem;
+                background: $white;
+                margin:1rem auto;
+                border-radius: 2rem;
+                transition: 0.3s linear;
+                @media screen and (max-width:1200px){
+                    width: 3rem;
+                    height: 0.2rem;
+                }
+            }
+            @media screen and (max-width:1200px){
+                display:block;
+                position: absolute;
+                left: 20px;
+            }
+            
+        }
+        .search-box {
+            @include flex;
+            justify-content: flex-end;
+            position: absolute;
+            right: 40px;
+            width: 30px;
+            transition: 0.5s ease-in-out;
+            @media screen and (max-width:1200px){
+                right: 80px;
+            }
+            
+            .search-box-content {
+                @include flex;
+                justify-content: flex-end;
+                position: relative;
+                width:100%;
+                height: 100%;
+                border-radius:25px;
+                //overflow: hidden;
+                box-sizing: border-box;
+                .dropdown {
+                    display: none;
+                    position: absolute;
+                    margin: auto;
+                    left:3px;
+                    background: none;
+                    color:$white;
+                    z-index: 999;
+                    button {
+                        background: none;
+                        outline: none;
+                    }
+                    ul {
+                        //position: absolute;
+                        z-index: 999;
+                        left:0;
+                        text-align: center;
+                        min-width: 50px;
+                        li {
+                            a {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+                input {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    border: none;
+                    padding-left: 60px;
+                    &:focus {
+                        border: none;
+                        outline: none;
+                    }
+                    
+                }
+                button {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    transition: 0.5s ease-in-out;
+                }
+                span {
+                    //position: absolute;
+                    margin: auto;
+                    right:0;
+                    top: 0;
+                    bottom: 0;
+                    transition: 0.5s ease-in-out;
+                }
+                .glyphicon-search {
+                    font-size: 1.2rem;
+                    color:$white;
+                }
+            }
+        }
+        .login {
+            @include flex;
+            position: absolute;
+            right:0;
+            @media screen and (max-width:1200px){
+                right: 40px;
+            }
+            .user {
+                border-radius: 50%;
+                display: none;
+                background: $white;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                }
+            }
+            .glyphicon-user {
+                font-size: 1.2rem;
+                color:$white;
+            }
+           
+        }
+        .login-choose {
+            display:none;
+            position: absolute;
+            top: 90px;
+            right:0;
+            background: $white;
+            text-align: center;
+            border-radius: 5px;
+            @media screen and (max-width:1200px){
+                right:40px;
+            }
+            ul{
+                li {
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    
+}
+.menu-all {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 110px;
+    background: -webkit-linear-gradient($white,$white, rgba(255,255,255,0.9));
+    z-index: 999;
+    ul {
+        @include flex();
+        height: 100%;
+        justify-content: center;
+        flex-direction: column;
+        li {
+            transition: 0.5s ease-in-out;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0);
+            &:hover {
+                border-bottom: 1px solid $blue;
+            };
+            
+            a {
+                font-size: 2.3rem;
+                color:$blue;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.col-md-12 {
+    padding: 0;
+}
+
+//底部
+footer {
+    height: 250px;
+    background: rgb(51,51,51);
+    color:$white;
+    margin-top: 50px;
+    .footer-left {
+        height: 100%;
+        @include flex();
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        p {
+            color:$white
+        };
+        ul {
+            li {
+                display: inline-block;
+                a {
+                    color:$white
+                }
+            }
+        }
+    }
+    .footer-right {
+        background: rgb(51,51,51);
+        height: 100%;
+        @include flex();
+        align-items: center;
+        justify-content: center;
+    }
+}
+/**头部导航和底部结束**/

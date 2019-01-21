@@ -1,0 +1,91 @@
+@import "./nav-footer.scss";
+body {
+  background: rgb(248, 246, 246);
+}
+header{
+  .nav-menu-ul {
+      li {
+          &:nth-child(2){
+              border: 1px solid $white !important;
+          }
+      }
+  }
+}
+/**banner开始**/
+.banner {
+  position: relative;
+  width: 100%;
+  height: 40%;
+  background: url('../images/home/bk3.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: scale 2s forwards;
+  margin-bottom: 30px;
+  font-size: 60px;
+  color:$white;
+  @include flex();
+  justify-content: center;
+  text-align: center;
+  //z-index: 99;
+}
+@keyframes scale{
+  0% {
+      transform: scale(.8);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+/**banner结束**/
+//默认样式
+.news {
+  .container {
+    background: #fff;
+    border: 1px solid rgb(235, 232, 232);
+    margin: 0 auto;
+    padding: 40px;
+  }
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+  .column {
+    margin: 0;
+    padding: 0;
+  }
+  .thumbnail {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+}
+.collection span{
+  padding:6px;
+  cursor: pointer;
+}
+.page-header h2{
+  text-align: center;
+  color: #778;
+}
+.page-header div{
+  margin-left: 40px;
+  margin-bottom: 30px;
+  color:#444;
+}
+.page-header *{
+  text-align: center;
+  color: #444;
+}
+.page-header img{
+  margin: 0 auto;
+}
+.page-header p{
+  text-align: justify;
+  margin-top: 30px;
+  color: #222;
+  font-size: 20px;
+  font-family: "楷体";
+  text-indent:2em;
+  line-height: 1.6;
+}

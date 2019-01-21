@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <script src="../plugins/jQuery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="../js/my.js"></script>
+    <link
+      rel="stylesheet"
+      href="../plugins/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/my.css" />
+    
+  </head>
+  <body>
+    <!-- 导航 -->
+     <!-- 导航 -->
+     <header class="container-full navbar-fixed-top">
+      <div class="nav-box container">
+          <nav class="col-xs-12 col-sm-12 col-md-12">
+              <div class="logo">
+                  <a href="../index.html">
+                      <img src="../images/common/logo-white.png" alt="" />
+                  </a>
+              </div>
+              <div class="nav-menu">
+                  <ul class="nav-menu-ul">
+                      <li>
+                          <a class="nav-to-page" href="../index.html">首页</a>
+                      </li>
+                      <li>
+                          <a class="nav-to-page" href="article.html">资讯</a>
+                      </li>
+                      <li>
+                          <a class="nav-to-page" href="music.html">音乐</a>
+                      </li>
+                      <li>
+                          <a class="nav-to-page" href="shop.html">周边</a>
+                      </li>
+                      <li>
+                          <a class="nav-to-page" href="show.html">演出</a>
+                      </li>
+                  </ul>
+                  
+              </div>
+              <div class="search-box">
+                  <div class="search-box-content">
+                          <div class="dropdown">
+                                  <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+                                      <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                                      <li role="presentation">
+                                          <a role="menuitem" tabindex="-1" href="#">资讯</a>
+                                      </li>
+                                      <li role="presentation">
+                                          <a role="menuitem" tabindex="-1" href="#">音乐</a>
+                                      </li>
+                                      <li role="presentation">
+                                          <a role="menuitem" tabindex="-1" href="#">商品</a>
+                                      </li>
+                                  </ul>
+                          </div>
+                      <input type="search" placeholder="Search...">
+                      <button class='search-btn'>
+                          <span class="glyphicon glyphicon-search" data-id="0"></span>
+                      </button>
+                  </div>
+              </div>
+              <div class="login">
+                  <a href="../pages/login.html">
+                      <span class="glyphicon glyphicon-user"></span>
+                  </a>
+                  <a class="user" href="my.html">
+                      <img src="../images/common/user-default.png" alt="">
+                  </a>
+              </div>
+              <div class="login-choose">
+                    <ul>
+                        <li>
+                            <a class="login-choice-one" href="pages/login.html">立即登录</a>
+                        </li>
+                        <li>
+                            <a class="login-choice-two" href="">注册</a>
+                        </li>
+                    </ul>
+              </div>
+              <button class="nav-menu-bar">
+                  <div></div>
+                  <div></div>
+              </button>
+              
+          </nav>
+          
+      </div>
+  </header>
+  <div class="menu-all">
+      <ul class="menu-all-list">
+          <li>
+              <a class="nav-to-page" href="../index.html">首 页</a>
+          </li>
+          <li>
+              <a class="nav-to-page" href="article.html">资 讯</a>
+          </li>
+          <li>
+              <a class="nav-to-page" href="music.html"">音 乐</a>
+          </li>
+          <li>
+              <a class="nav-to-page" href="shop.html">周 边</a>
+          </li>
+          <li>
+              <a class="nav-to-page" href="show.html">演 出</a>
+          </li>
+          
+      </ul>
+</div>
+<!-- 导航结束 -->
+    <!-- 导航 -->
+
+    <!-- 我的-页面 -->
+    <div class="top-box"></div>
+    <div class="container " id="main">
+      <div class="row clearfix">
+        <div class="col-md-3 col-sm-3 column">
+          <div class="thumbnail"><div class=" user-image"></div></div>
+          <ul class="list-unstyled">
+            <li class="active">我的信息</li>
+            <li>购物车</li>
+            <li>收藏的音乐</li>
+            <li>收藏的资讯</li>
+            <li>收藏的商品</li>
+          </ul>
+        </div>
+        <div class="col-md-9 col-sm-9 column xiangxi">
+          <div class="m-message">
+            <div><p>个人信息</p></div>
+          </div>
+          <div class="m-cart">2</div>
+          <div class="m-music">3</div>
+          <div class="m-news">4</div>
+          <div class="m-goods">5</div>
+        </div>
+      </div>
+    </div>
+    <!-- 我的-页面 -->
+
+    <!-- 底部footer -->
+    <footer>
+      <div class="footer-left col-xs-12 col-ms-6 col-md-6">
+        <ul>
+          <li><a href="">关于我们</a></li>
+          |
+          <li><a href="">意见反馈</a></li>
+          |
+          <li><a href="">免责声明</a></li>
+          |
+          <li><a href="">友情链接</a></li>
+          |
+          <li><a href="">联系我们</a></li>
+        </ul>
+        <p>Copyright © 2003-2018 yedm.net, All Rights Reserved</p>
+      </div>
+      <div class="footer-right col-xs-12 col-ms-6 col-md-6">
+        <img src="../images/common/logo-white.png" alt="" />
+      </div>
+    </footer>
+  </body>
+</html>

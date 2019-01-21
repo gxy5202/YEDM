@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>音乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/music.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../plugins/wow/css/animate.min.css" />
+    <script src="../plugins/jQuery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../plugins/lazyload/jquery.scrollstop.js"></script>
+    <script src="../plugins/lazyload/jquery.lazyload.js?v=1.9.1"></script>
+    <script src="../plugins/wow/js/wow.min.js"></script>
+    <script type="module" src="../js/music.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 导航 -->
+        <header class="container-full navbar-fixed-top">
+            <div class="nav-box container">
+                <nav class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="logo">
+                        <a class="nav-to-page" href="index.html">
+                            <img src="../images/common/logo-white.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="nav-menu">
+                        <ul class="nav-menu-ul">
+                            <li>
+                                <a class="nav-to-page" href="../index.html">首页</a>
+                            </li>
+                            <li>
+                                <a class="nav-to-page" href="article.html#1">资讯</a>
+                            </li>
+                            <li>
+                                <a class="nav-to-page" href="music.html#1">音乐</a>
+                            </li>
+                            <li>
+                                <a class="nav-to-page" href="shop.html#1">周边</a>
+                            </li>
+                            <li>
+                                <a class="nav-to-page" href="show.html#1">演出</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="search-box">
+                        <div class="search-box-content">
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">资讯</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">音乐</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a role="menuitem" tabindex="-1" href="#">商品</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="search" placeholder="Search...">
+                            <button class='search-btn'>
+                                <span class="glyphicon glyphicon-search" data-id="0"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="login">
+                        <a class="sign-in" href="login.html">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                        <a class="user" href="my.html">
+                            <img src="../images/common/user-default.png" alt="">
+                        </a>
+                    </div>
+                    <div class="login-choose">
+                        <ul>
+                            <li>
+                                <a class="login-choice-one" href="login.html">立即登录</a>
+                            </li>
+                            <li>
+                                <a class="login-choice-two" href="signUp.html">注册</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="nav-menu-bar">
+                        <div></div>
+                        <div></div>
+                    </button>
+                </nav>
+
+            </div>
+        </header>
+        <div class="menu-all">
+            <ul class="menu-all-list">
+                <li>
+                    <a class="nav-to-page" href="../index.html">首 页</a>
+                </li>
+                <li>
+                    <a class="nav-to-page" href="article.html#1">资 讯</a>
+                </li>
+                <li>
+                    <a class="nav-to-page" href="music.html#1">音 乐</a>
+                </li>
+                <li>
+                    <a class="nav-to-page" href="shop.html#1">周 边</a>
+                </li>
+                <li>
+                    <a class="nav-to-page" href="show.html#1">演 出</a>
+                </li>
+            </ul>
+        </div>
+        <!-- banner -->
+
+        <div class="banner col-xs-12 col-sm-12 col-md-12">
+            Music
+        </div>
+        <!-- banner结束 -->
+
+        <!-- 音乐 -->
+        <div id="mask"></div> 
+        <div class="container-full">
+            <div class="container music-box">
+                <div class="music-num">
+
+                </div>
+                <div class="main">
+
+                </div>
+            </div>
+            <div class="container page-btn-box">
+                <div class="page-btn">
+                    <button id="last-page">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </button>
+                    <button id="next-page">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+       
+
+        <!-- 底部 -->
+        <footer>
+            <div class="footer-left col-xs-12 col-ms-6 col-md-6">
+                <ul>
+                    <li>
+                        <a href="">关于我们</a>
+                    </li> |
+                    <li>
+                        <a href="">意见反馈</a>
+                    </li> |
+                    <li>
+                        <a href="">免责声明</a>
+                    </li> |
+                    <li>
+                        <a href="">友情链接</a>
+                    </li> |
+                    <li>
+                        <a href="">联系我们</a>
+                    </li>
+                </ul>
+                <p>Copyright © 2003-2018 yedm.net, All Rights Reserved</p>
+            </div>
+            <div class="footer-right col-xs-12 col-sm-6 col-md-6">
+                <img src="../images/common/logo-white.png" alt="" />
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

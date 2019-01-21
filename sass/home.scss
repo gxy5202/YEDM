@@ -1,0 +1,348 @@
+//引入导航样式
+@import "./nav-footer.scss";
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin boxSize {
+    box-sizing: border-box;
+    //overflow: hidden;
+}
+body {
+    height: 100%;
+}
+.wrapper {
+    height: 100%;
+}
+//100%导航
+.wid_full {
+    width:100%;
+}
+//菜单旋转
+.rotate-one {
+    transform: rotate(45deg) translateY(0.8rem);
+    transform-origin:50% 50%;
+}
+.rotate-two {
+    transform: rotate(-45deg) translateY(-0.9rem);
+    transform-origin:50% 50%;
+}
+//菜单定位
+.flex-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//菜单颜色
+.menu-color {
+    background-color: $white;
+}
+//logo位置
+.logo-position {
+    margin: auto;
+}
+
+//搜索框颜色
+#search-color {
+    border:1px #0CC solid;
+	box-shadow:0 0 1rem #0CC; 
+}
+#search-show {
+    width:80%;
+    height:4rem; 
+    background: rgba(255,255,255,0.5);
+    border-radius:35px;
+}
+#search-icon {
+    font-size:1.5rem;
+    color:rgb(0,136,255);
+}
+.search-button {
+    margin-right:20px;
+}
+#search-icon-font {
+    font-size:1.2rem;
+}
+header{
+    .nav-menu-ul {
+        li {
+            &:nth-child(1){
+                border: 1px solid $white !important;
+            }
+        }
+    }
+}
+
+
+
+/**banner开始**/
+.banner {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    background: url('../images/home/bk1.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: scale 2s forwards;
+    font-size: 60px;
+    color:$white;
+    @include flex();
+    justify-content: center;
+    text-align: center;
+}
+@keyframes scale{
+    0% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/**banner结束**/
+
+/**正文开始**/
+
+/**资讯简介**/
+.content-box{
+    margin:auto auto 30px auto;
+    .content-title {
+        @include flex();
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 30px auto;
+        h2 {
+            width: 100%;
+            text-align: center;
+            &:after {
+                content: "";
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin:10px auto;
+                background: $blue;
+            }
+        }
+    }
+    .content-article-box {
+        margin:auto;
+        background:  rgba(0,0,0,0.3);
+        @media screen and (max-width:991px){
+            width: 90%;
+        }
+        background: red;
+        .content-article1,.content-article2,.content-article3{
+            box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+            position: relative;
+            img {
+                width: 130%;
+                position: absolute;
+                transition: 0.5s linear;
+            };
+            @media screen and (max-width:991px){
+                width: 100%;
+            }
+            overflow: hidden;
+        }
+        .content-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            &:hover ~ img{
+                transform: scale(1.1);
+            }
+            @include flex();
+                justify-content: center;
+                flex-wrap: wrap;
+                color:$white;
+                p {
+                    width: 100%;
+                    text-align: center;
+                    &.content-mask-title {
+                        font-size: 2.5rem;
+                        margin-bottom: -80px;
+                    }
+                }
+        }
+        
+        .content-article1 {	
+            &:hover {
+                transition: 0.5s;
+            }
+            width: 100%;
+            height: 330px;
+            transition: 0.5s linear;
+            .content-mask {
+                background: linear-gradient(to top, rgba(0,136,255,0.5), rgba(0,0,0,0.7));
+            }
+            @media screen and (max-width:991px){
+                width: 100%;
+            }
+        }
+        .content-article-box2,.content-article-box3 {
+            height: 330px;
+        }      
+        .content-article-box2 {
+            @include flex();
+            justify-content: flex-start;
+            margin: 15px auto 0 auto;
+            @media screen and (max-width:991px){
+                justify-content: center;
+                width: 100%;
+            }
+            .content-article2 {
+                width: 99%;
+                height: 100%;
+                @media screen and (max-width:991px){
+                    width: 100%;
+                }
+                .content-mask {
+                    background: linear-gradient(to bottom right, rgba(157,0,255,0.5), rgba(0,0,0,0.7));
+                }
+            }
+        }
+        .content-article-box3 {
+            @include flex();
+            justify-content: flex-end;
+            margin-top: 15px;
+            font-size: 1rem;
+            @media screen and (max-width:991px){
+                width: 100%;
+                justify-content: center;
+            }
+            .content-article3 {
+                width: 99%;
+                height: 100%;
+                font-size: 1rem;
+                @media screen and (max-width:991px){
+                    width: 100%;
+                }
+                .content-mask {
+                    background: linear-gradient(to top left, rgba(43,211,131,0.5), rgba(0,0,0,0.7));
+                }
+            }
+        }
+    }
+}
+.col-md-8,.col-md-4 {
+    padding:0;
+}
+/**资讯结束**/
+
+/**音乐**/
+.swiper-container {
+    height: 320px;
+    .swiper-wrapper{
+        // @include flex();
+        // align-items: center;
+    }
+    @media screen and (max-width:768px){
+        height:200px;
+    }
+    @media screen and (max-width:415px){
+        height:100px;
+    }
+    
+}
+
+ .swiper-slide {
+        overflow: hidden;
+        height: 90%;
+        
+        //border-radius: 10px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        position: relative;
+        width: 60%;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        &:nth-child(2n) {
+            width: 100px;
+        }
+        img {
+            //filter: brightness(30%);
+            position: absolute;
+            width: 110%;
+            //border-radius: 10px;
+            transition: 0.5s linear;
+            &~ span,&~ p{
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 32%;
+                
+                color:$white;
+                opacity: 0;
+            }
+        }
+        &:hover img {
+            transform: scale(1.1);
+            &~ span{
+                opacity: 1;
+                font-size: 5rem;
+            }
+            &~ p {
+                opacity: 1;
+                top: 65%;
+            }
+        }
+        
+    }
+
+    // 演出简介
+    .show-box {
+        overflow: hidden;
+        height: 400px;
+        width: 100%;
+        background: url('../images/home/bk2.jpg') no-repeat center;
+        background-attachment: fixed;
+        background-size: cover;
+        @include flex();
+        justify-content: center;
+        .container {
+            
+            @include flex();
+            justify-content: space-between;
+            img {
+                width: 120px;
+                height: 100px;
+                &:nth-child(2) {
+                    width:200px;
+                    height: 100px;
+                }
+                &:nth-child(3) {
+                    width:300px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+    .col-md-7,col-md-5{
+        padding:0
+    }
+    .shop-box {
+        width: 100%;
+        height: 800px;
+        background: url('../images/home/shopping.jpg') no-repeat center;
+        background-size: cover;
+        font-size: 60px;
+        font-weight: bold;
+        @include flex();
+        justify-content: center;
+        color:$white;
+    }

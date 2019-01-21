@@ -1,0 +1,57 @@
+@import "./nav-footer.scss";
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background: url('../images/login/login-bk.png') no-repeat center;
+    @include flex();
+    justify-content: center;
+    align-items: center;
+    .login-wrap {
+        @include flex();
+        justify-content: flex-end;
+        align-items: center;
+        .login-box {
+            @include flex();
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            width: 500px;
+            background: $white;
+            border-radius: 20px;
+            p{
+                font-size: 2rem;
+                color:$blue;
+            }
+            .login-input {
+                width: 330px;
+                height: 40px;
+                @include flex();
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                input {
+                    height: 100%;
+                    width: 100%;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    outline: none;
+                    padding-left: 5px;
+                    &#sub{
+                        background: $blue;
+                        border: 1px solid $blue;
+                        color:$white;
+                        font-size: 1.3rem;
+                    }
+                }
+                .glyphicon {
+                    color:$blue;
+                    font-size: 1.7rem;
+                }
+            }
+            .link-to-signUp {
+                @include flex();
+                justify-content: space-between;
+            }
+        }
+    }
+}
